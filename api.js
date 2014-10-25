@@ -13,12 +13,27 @@ api.all('*', function(req, res, next){
 
 // Get cases
 api.get('/cases', function(req, res){
+
   res.removeHeader('X-Powered-By')
-  ebola.cases(function(err, output){
-    if (err) throw err
-    res.type('json');
-    res.send(JSON.stringify(output,null,4));
-  })
+
+  if (req.query.project) {
+
+    ebola.project(req.query.project, 'latest', function(err, output){
+      if (err) throw err
+      res.type('json');
+      res.send(JSON.stringify(output,null,4));
+    })
+
+  } else {
+
+    ebola.cases(function(err, output){
+      if (err) throw err
+      res.type('json');
+      res.send(JSON.stringify(output,null,4));
+    })
+
+  }
+
 });
 
 // Catch all
@@ -26,7 +41,6 @@ api.all('*', function(req, res, next){
   res.type('text');
   res.status(404).send('Wrong path, use /cases');
 });
-
 
 api.listen(3333);
 console.log('api listening on 3333');
