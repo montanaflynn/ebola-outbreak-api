@@ -11,4 +11,9 @@ This simple API returns a JSON array that has timeseries of Ebola cases. It's bu
 
 ### Usage
 
-	curl -i localhost:3333/cases
+	# If running locally
+	curl localhost:3333/cases
+
+	# or use this one
+	curl http://192.241.227.237/ebola
+
