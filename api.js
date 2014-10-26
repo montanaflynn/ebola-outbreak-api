@@ -18,7 +18,7 @@ api.get('/cases', function(req, res){
 
   if (req.query.project) {
 
-    ebola.project(req.query.project, 'latest', function(err, output){
+    ebola.project(req.query.project, function(err, output){
       if (err) throw err
       res.type('json');
       res.send(JSON.stringify(output,null,4));

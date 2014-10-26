@@ -1,9 +1,9 @@
 {
   "name": "ebola-outbreak-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
-    "ebola-outbreak": "^0.1.7",
+    "ebola-outbreak": "^0.2.1",
     "express": "~4.9.0"
   }
 }
