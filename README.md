@@ -5,7 +5,9 @@ This simple API returns a JSON array that has timeseries of Ebola cases. It's bu
 ### Docs
 
 `GET /cases` returns case information 
+
 `GET /predict?distance=5` returns projections for the next 5 time periods
+
 `GET /rate` returns latest growth rate
 
 ### Install
